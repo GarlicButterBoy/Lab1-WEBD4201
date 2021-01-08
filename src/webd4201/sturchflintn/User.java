@@ -1,0 +1,334 @@
+package webd4201.sturchflintn;
+
+import java.text.DateFormat;
+import java.time.LocalDate;
+import java.util.Date;
+import java.util.Locale;
+
+/**
+ * @author Nick Sturch-Flint - 100303769
+ * @author Nick Sturch-Flint
+ * @version 1.0 (Janaury 8th, 2021)
+ */
+public class User implements CollegeInterface {
+
+    //Constants
+    protected static long DEFAULT_ID = 100123456;
+    protected static String DEFAULT_PASSWORD = "password";
+    public static final byte MINIMUM_PASSWORD_LENGTH = 8;
+    public static final byte MAXIMUM_PASSWORD_LENGTH = 20;
+    protected static String DEFAULT_FIRST_NAME = "John";
+    protected static String DEFAULT_LAST_NAME = "Doe";
+    protected static String DEFAULT_EMAIL_ADDRESS = "john.doe@dcmail.com";
+    protected static boolean DEFAULT_ENABLED_STATUS = true;
+    protected static char DEFAULT_TYPE = 's';
+    protected static byte ID_NUMBER_LENGTH = 9;
+    protected final static DateFormat DF = DateFormat.getDateInstance(DateFormat.MEDIUM, Locale.CANADA);
+
+    /**
+     *
+     */
+    private long id;
+
+    /**
+     *
+     */
+    private String password;
+
+    /**
+     *
+     */
+    private String firstName;
+
+    /**
+     *
+     */
+    private String lastName;
+
+    /**
+     *
+     */
+    private String emailAddress;
+
+    /**
+     *
+     */
+    private Date lastAccess;
+
+    /**
+     *
+     */
+    private Date enrolDate;
+
+    /**
+     *
+     */
+    private boolean enabled;
+
+    /**
+     *
+     */
+    private char type;
+
+    //Accessors
+    //Getters
+    /**
+     *
+     * @return
+     */
+    public long getId()
+    {
+        return id;
+    }
+
+    /**
+     *
+     * @return
+     */
+    public String getPassword()
+    {
+        return password;
+    }
+
+    /**
+     *
+     * @return
+     */
+    public String getFirstName()
+    {
+        return firstName;
+    }
+
+    /**
+     *
+     * @return
+     */
+    public String getLastName()
+    {
+        return lastName;
+    }
+
+    /**
+     *
+     * @return
+     */
+    public String getEmailAddress()
+    {
+        return emailAddress;
+    }
+
+    /**
+     *
+     * @return
+     */
+    public Date getLastAccess()
+    {
+        return lastAccess;
+    }
+
+    /**
+     *
+     * @return
+     */
+    public Date getEnrolDate()
+    {
+        return enrolDate;
+    }
+
+    /**
+     *
+     * @return
+     */
+    public boolean isEnabled()
+    {
+        return enabled;
+    }
+
+    /**
+     *
+     * @return
+     */
+    public char getType()
+    {
+        return type;
+    }
+
+
+
+    //Setters
+    /**
+     *
+     * @param id
+     */
+    public void setId(long id)
+    {
+        this.id = id;
+    }
+
+    /**
+     *
+     * @param password
+     */
+    public void setPassword(String password)
+    {
+        this.password = password;
+    }
+
+    /**
+     *
+     * @param firstName
+     */
+    public void setFirstName(String firstName)
+    {
+        this.firstName = firstName;
+    }
+
+    /**
+     *
+     * @param lastName
+     */
+    public void setLastName(String lastName)
+    {
+        this.lastName = lastName;
+    }
+
+    /**
+     *
+     * @param emailAddress
+     */
+    public void setEmailAddress(String emailAddress)
+    {
+        this.emailAddress = emailAddress;
+    }
+
+    /**
+     *
+     * @param lastAccess
+     */
+    public void setLastAccess(Date lastAccess)
+    {
+        this.lastAccess = lastAccess;
+    }
+
+    /**
+     *
+     * @param enrolDate
+     */
+    public void setEnrolDate(Date enrolDate)
+    {
+        this.enrolDate = enrolDate;
+    }
+
+    /**
+     *
+     * @param enabled
+     */
+    public void setEnabled(boolean enabled)
+    {
+        this.enabled = enabled;
+    }
+
+    /**
+     *
+     * @param type
+     */
+    public void setType(char type)
+    {
+        this.type = type;
+    }
+
+    //Constructors
+    /**
+     *
+     * @param id
+     * @param password
+     * @param firstName
+     * @param lastName
+     * @param emailAddress
+     * @param lastAccess
+     * @param enrolDate
+     * @param enabled
+     * @param type
+     */
+    public User(long id, String password, String firstName, String lastName, String emailAddress, Date lastAccess, Date enrolDate, boolean enabled, char type) {
+        setId(id);
+        setPassword(password);
+        setFirstName(firstName);
+        setLastName(lastName);
+        setEmailAddress(emailAddress);
+        setLastAccess(lastAccess);
+        setEnrolDate(enrolDate);
+        setEnabled(enabled);
+        setType(type);
+    }
+
+    /**
+     * Default Constructor
+     */
+    public User()
+    {
+       this.id = DEFAULT_ID;
+       this.password = DEFAULT_PASSWORD;
+       this.firstName = DEFAULT_FIRST_NAME;
+       this.lastName = DEFAULT_LAST_NAME;
+       this.emailAddress = DEFAULT_EMAIL_ADDRESS;
+       this.lastAccess = new Date();
+       this.enrolDate = new Date();
+       this.enabled = true;
+       this.type = DEFAULT_TYPE;
+    }
+
+    //Methods
+    /**
+     *
+     * @return String
+     */
+    public String getTypeForDisplay()
+    {
+        return "User";
+    }
+
+    /**
+     *
+     * @return String
+     */
+    @Override
+    public String toString()
+    {
+        return "User\n{" +
+                "Student ID    = " + id + "\n" +
+                "Name          = " + firstName + ' ' + lastName + "\n" +
+                "Email Address = " + emailAddress + '\n' +
+                "Created On    = " + enrolDate + "\n" +
+                "Last Access   = " + lastAccess + "\n" +
+                '}';
+    }
+
+    /**
+     *
+     * @return
+     */
+    public void dump()
+    {
+       System.out.println(toString());
+    }
+
+    /**
+     *
+     * @param id
+     * @return
+     */
+    public static boolean verifyId(long id)
+    {
+        boolean flag = true;
+
+        if (id > MAXIMUM_ID_NUMBER || id < MINIMUM_ID_NUMBER)
+        {
+            flag = false;
+        }
+
+        return flag;
+    }
+
+
+}
