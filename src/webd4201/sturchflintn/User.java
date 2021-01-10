@@ -295,7 +295,7 @@ public class User implements CollegeInterface {
     @Override
     public String toString()
     {
-        return "User\n{" +
+        return  getTypeForDisplay() + "\n{" +
                 "Student ID    = " + id + "\n" +
                 "Name          = " + firstName + ' ' + lastName + "\n" +
                 "Email Address = " + emailAddress + '\n' +
