@@ -127,6 +127,10 @@ public class Mark
 
     //METHODS
 
+    /**
+     *
+     * @return
+     */
     @Override
     public String toString() {
         return  String.format("%-20", getCourseCode()) +
