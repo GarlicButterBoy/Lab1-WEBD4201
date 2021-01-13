@@ -3,9 +3,10 @@ package webd4201.sturchflintn;
 import java.text.DecimalFormat;
 
 /**
+ * Class Description:
  * @author Nick Sturch-Flint - 100303769
- * @author Nick Sturch-Flint
- * @version 1.0 (Janaury 11th, 2021)
+ * @version 1.0 (January 11th, 2021)
+ * @since 1.0 (January 11th, 2021)
  */
 public class Mark
 {
@@ -24,10 +25,10 @@ public class Mark
     //CONSTRUCTORS
     /**
      *
-     * @param courseCode
-     * @param courseName
-     * @param result
-     * @param gpaWeighting
+     * @param courseCode Class Code
+     * @param courseName Class Name
+     * @param result Class Grade
+     * @param gpaWeighting GPA Weight
      */
     public Mark(String courseCode, String courseName, int result, float gpaWeighting)
     {
