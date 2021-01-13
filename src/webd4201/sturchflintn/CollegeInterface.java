@@ -15,8 +15,8 @@ public interface CollegeInterface {
     public static final long MAXIMUM_ID_NUMBER = 999999999L;
 
     /**
-     *
-     * @return String
+     * Returns the user type depending on the child class it is called.
+     * @return String User type
      */
     public abstract String getTypeForDisplay();
 

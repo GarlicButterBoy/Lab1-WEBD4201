@@ -239,16 +239,16 @@ public class User implements CollegeInterface {
 
     //Constructors
     /**
-     *
-     * @param id
-     * @param password
-     * @param firstName
-     * @param lastName
-     * @param emailAddress
-     * @param lastAccess
-     * @param enrolDate
-     * @param enabled
-     * @param type
+     * Parameterized Constructor
+     * @param id User ID
+     * @param password Users Password
+     * @param firstName User's First Name
+     * @param lastName User's Last Name
+     * @param emailAddress User's Email Address
+     * @param lastAccess User's Last Access Date
+     * @param enrolDate User's Enrolment Date
+     * @param enabled If User is Enabled
+     * @param type User's Account Type
      */
     public User(long id, String password, String firstName, String lastName, String emailAddress, Date lastAccess, Date enrolDate, boolean enabled, char type) {
         setId(id);
@@ -280,8 +280,8 @@ public class User implements CollegeInterface {
 
     //Methods
     /**
-     *
-     * @return String
+     * Returns the user type depending on the child class it is called.
+     * @return String User
      */
     public String getTypeForDisplay()
     {
@@ -289,7 +289,7 @@ public class User implements CollegeInterface {
     }
 
     /**
-     *
+     * Overrides the toString method to print out the class to a string.
      * @return String
      */
     @Override
@@ -305,8 +305,8 @@ public class User implements CollegeInterface {
     }
 
     /**
-     *
-     * @return
+     * Prints the object.
+     * @return Object as a String
      */
     public void dump()
     {
@@ -314,9 +314,9 @@ public class User implements CollegeInterface {
     }
 
     /**
-     *
+     * Returns a boolean depending on the id number after being compared to the min and max id numbers allowed.
      * @param id
-     * @return
+     * @return boolean
      */
     public static boolean verifyId(long id)
     {
