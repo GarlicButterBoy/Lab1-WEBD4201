@@ -8,9 +8,10 @@ import java.security.PrivilegedActionException;
  * @author Nick Sturch-Flint
  * @version 1.0 (Janaury 16th, 2021)
  */
-@SuppressWarnings("serial")
+
 public class InvalidIdException extends Exception
 {
+    @SuppressWarnings("serial")
     /**
      *
      */

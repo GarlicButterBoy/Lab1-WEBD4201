@@ -2,9 +2,10 @@ package webd4201.sturchflintn;
 
 import java.security.PrivilegedActionException;
 
-@SuppressWarnings("serial")
+
 public class InvalidUserDataException extends Exception
 {
+    @SuppressWarnings("serial")
     /**
      * Constructs a new exception with {@code null} as its detail message.
      * The cause is not initialized, and may subsequently be initialized by a

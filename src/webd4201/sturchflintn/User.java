@@ -303,17 +303,25 @@ public class User implements CollegeInterface {
      * @param enabled If User is Enabled
      * @param type User's Account Type
      */
-    public User(long id, String password, String firstName, String lastName, String emailAddress, Date lastAccess, Date enrolDate, boolean enabled, char type) throws InvalidIdException, InvalidPasswordException, InvalidNameException, InvalidUserDataException
+    public User(long id, String password, String firstName, String lastName, String emailAddress, Date lastAccess, Date enrolDate, boolean enabled, char type) throws InvalidUserDataException
     {
-        setId(id);
-        setPassword(password);
-        setFirstName(firstName);
-        setLastName(lastName);
-        setEmailAddress(emailAddress);
-        setLastAccess(lastAccess);
-        setEnrolDate(enrolDate);
-        setEnabled(enabled);
-        setType(type);
+        try
+        {
+            setId(id);
+            setPassword(password);
+            setFirstName(firstName);
+            setLastName(lastName);
+            setEmailAddress(emailAddress);
+            setLastAccess(lastAccess);
+            setEnrolDate(enrolDate);
+            setEnabled(enabled);
+            setType(type);
+        }
+        catch (Exception e)
+        {
+            throw new InvalidUserDataException(e.getMessage());
+        }
+
     }
 
     /**
