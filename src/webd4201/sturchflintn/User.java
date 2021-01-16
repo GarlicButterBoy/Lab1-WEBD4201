@@ -161,9 +161,9 @@ public class User implements CollegeInterface {
     /**
      *
      * @param id
-     * @exception InvalidException
+     * @exception InvalidIdException
      */
-    public void setId(long id) throws InvalidException
+    public void setId(long id) throws InvalidIdException
     {
         if (id >= MINIMUM_ID_NUMBER && id <= MAXIMUM_ID_NUMBER)
         {
@@ -171,7 +171,7 @@ public class User implements CollegeInterface {
         }
         else
         {
-            throw new InvalidException(id + " is not a valid ID number.");
+            throw new InvalidIdException(id + " is not a valid ID number.");
         }
 
     }
@@ -199,14 +199,17 @@ public class User implements CollegeInterface {
      */
     public void setFirstName(String firstName) throws InvalidNameException
     {
-        boolean flag = true;
-        double test = Double.parseDouble(firstName);
-        if (firstName.length() > 0)
+        boolean flag = false;
+        try
         {
-
+            double test = Double.parseDouble(firstName);
+        }
+        catch (NumberFormatException ex)
+        {
+         flag = true;
         }
 
-        if (flag == true)
+        if (!(firstName.isEmpty()) && flag)
         {
             this.firstName = firstName;
         }
@@ -214,7 +217,6 @@ public class User implements CollegeInterface {
         {
             throw new InvalidNameException(firstName + " is not a valid name. Make sure there are no numbers or special characters.");
         }
-
     }
 
     /**
@@ -223,7 +225,24 @@ public class User implements CollegeInterface {
      */
     public void setLastName(String lastName) throws InvalidNameException
     {
-        this.lastName = lastName;
+        boolean flag = false;
+        try
+        {
+            double test = Double.parseDouble(lastName);
+        }
+        catch (NumberFormatException ex)
+        {
+            flag = true;
+        }
+
+        if (!(lastName.isEmpty()) && flag)
+        {
+            this.lastName = lastName;
+        }
+        else
+        {
+            throw new InvalidNameException(lastName + " is not a valid name. Make sure there are no numbers or special characters.");
+        }
     }
 
     /**
@@ -284,7 +303,7 @@ public class User implements CollegeInterface {
      * @param enabled If User is Enabled
      * @param type User's Account Type
      */
-    public User(long id, String password, String firstName, String lastName, String emailAddress, Date lastAccess, Date enrolDate, boolean enabled, char type) throws InvalidException, InvalidPasswordException, InvalidNameException
+    public User(long id, String password, String firstName, String lastName, String emailAddress, Date lastAccess, Date enrolDate, boolean enabled, char type) throws InvalidIdException, InvalidPasswordException, InvalidNameException, InvalidUserDataException
     {
         setId(id);
         setPassword(password);

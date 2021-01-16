@@ -8,12 +8,13 @@ import java.security.PrivilegedActionException;
  * @author Nick Sturch-Flint
  * @version 1.0 (Janaury 16th, 2021)
  */
-public class InvalidException extends Exception
+@SuppressWarnings("serial")
+public class InvalidIdException extends Exception
 {
     /**
      *
      */
-    public InvalidException(String message)
+    public InvalidIdException(String message)
     {
         super(message);
     }
@@ -32,7 +33,7 @@ public class InvalidException extends Exception
      *                unknown.)
      * @since 1.4
      */
-    public InvalidException(String message, Throwable cause) {
+    public InvalidIdException(String message, Throwable cause) {
         super(message, cause);
     }
 
@@ -50,7 +51,7 @@ public class InvalidException extends Exception
      *              unknown.)
      * @since 1.4
      */
-    public InvalidException(Throwable cause) {
+    public InvalidIdException(Throwable cause) {
         super(cause);
     }
 
@@ -68,7 +69,7 @@ public class InvalidException extends Exception
      *                           be writable
      * @since 1.7
      */
-    public InvalidException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
+    public InvalidIdException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
         super(message, cause, enableSuppression, writableStackTrace);
     }
 
@@ -77,6 +78,6 @@ public class InvalidException extends Exception
      * The cause is not initialized, and may subsequently be initialized by a
      * call to {@link #initCause}.
      */
-    public InvalidException() {
+    public InvalidIdException() {
     }
 }

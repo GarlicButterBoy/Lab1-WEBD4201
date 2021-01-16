@@ -2,6 +2,7 @@ package webd4201.sturchflintn;
 
 import java.security.PrivilegedActionException;
 
+@SuppressWarnings("serial")
 public class InvalidUserDataException extends Exception
 {
     /**
