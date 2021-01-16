@@ -34,8 +34,7 @@ public class Student extends User
      * @param year
      * @param marks
      */
-    public Student(long id, String password, String firstName, String lastName, String emailAddress, Date lastAccess, Date enrolDate, boolean enabled, char type, String programCode, String programDescription, int year, Vector<Mark> marks)
-    {
+    public Student(long id, String password, String firstName, String lastName, String emailAddress, Date lastAccess, Date enrolDate, boolean enabled, char type, String programCode, String programDescription, int year, Vector<Mark> marks) throws InvalidNameException, InvalidException, InvalidPasswordException {
         super(id, password, firstName, lastName, emailAddress, lastAccess, enrolDate, enabled, type);
         setProgramCode(programCode);
         setProgramDescription(programDescription);
@@ -59,8 +58,7 @@ public class Student extends User
      */
     public Student(long id, String password, String firstName, String lastName, String emailAddress,
                    Date lastAccess, Date enrolDate, boolean enabled, char type, String programCode,
-                   String programDescription, int year)
-    {
+                   String programDescription, int year) throws InvalidNameException, InvalidException, InvalidPasswordException {
         this(id, password, firstName, lastName, emailAddress, lastAccess, enrolDate,
                 enabled, type, programCode, programDescription, year, new Vector<>());
     }
@@ -68,8 +66,7 @@ public class Student extends User
     /**
      * Default Constructor
      */
-    public Student()
-    {
+    public Student() throws InvalidNameException, InvalidException, InvalidPasswordException {
         this(DEFAULT_ID, DEFAULT_PASSWORD, DEFAULT_FIRST_NAME, DEFAULT_LAST_NAME, DEFAULT_EMAIL_ADDRESS,
                 new Date(), new Date(), DEFAULT_ENABLED_STATUS, DEFAULT_TYPE,  DEFAULT_PROGRAM_CODE,
                 DEFAULT_PROGRAM_DESCRIPTION, DEFAULT_YEAR, new Vector<>());

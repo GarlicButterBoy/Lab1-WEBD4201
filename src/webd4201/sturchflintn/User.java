@@ -5,6 +5,8 @@ import java.time.LocalDate;
 import java.util.Date;
 import java.util.Locale;
 
+import static java.lang.Double.*;
+
 /**
  * @author Nick Sturch-Flint - 100303769
  * @author Nick Sturch-Flint
@@ -159,35 +161,67 @@ public class User implements CollegeInterface {
     /**
      *
      * @param id
+     * @exception InvalidException
      */
-    public void setId(long id)
+    public void setId(long id) throws InvalidException
     {
-        this.id = id;
+        if (id >= MINIMUM_ID_NUMBER && id <= MAXIMUM_ID_NUMBER)
+        {
+            this.id = id;
+        }
+        else
+        {
+            throw new InvalidException(id + " is not a valid ID number.");
+        }
+
     }
 
     /**
      *
      * @param password
      */
-    public void setPassword(String password)
+    public void setPassword(String password) throws InvalidPasswordException
     {
-        this.password = password;
+        if (password.length() >= MINIMUM_PASSWORD_LENGTH && password.length() <= MAXIMUM_PASSWORD_LENGTH)
+        {
+            this.password = password;
+        }
+        else
+        {
+            throw new InvalidPasswordException("The length of the password must be between " + MINIMUM_PASSWORD_LENGTH + " and " + MAXIMUM_PASSWORD_LENGTH + " characters long.");
+        }
+
     }
 
     /**
      *
      * @param firstName
      */
-    public void setFirstName(String firstName)
+    public void setFirstName(String firstName) throws InvalidNameException
     {
-        this.firstName = firstName;
+        boolean flag = true;
+        double test = Double.parseDouble(firstName);
+        if (firstName.length() > 0)
+        {
+
+        }
+
+        if (flag == true)
+        {
+            this.firstName = firstName;
+        }
+        else
+        {
+            throw new InvalidNameException(firstName + " is not a valid name. Make sure there are no numbers or special characters.");
+        }
+
     }
 
     /**
      *
      * @param lastName
      */
-    public void setLastName(String lastName)
+    public void setLastName(String lastName) throws InvalidNameException
     {
         this.lastName = lastName;
     }
@@ -250,7 +284,8 @@ public class User implements CollegeInterface {
      * @param enabled If User is Enabled
      * @param type User's Account Type
      */
-    public User(long id, String password, String firstName, String lastName, String emailAddress, Date lastAccess, Date enrolDate, boolean enabled, char type) {
+    public User(long id, String password, String firstName, String lastName, String emailAddress, Date lastAccess, Date enrolDate, boolean enabled, char type) throws InvalidException, InvalidPasswordException, InvalidNameException
+    {
         setId(id);
         setPassword(password);
         setFirstName(firstName);

@@ -40,8 +40,7 @@ public class Faculty extends User
      * @param office
      * @param extension
      */
-    public Faculty(long id, String password, String firstName, String lastName, String emailAddress, Date lastAccess, Date enrolDate, boolean enabled, char type, String schoolCode, String schoolDescription, String office, int extension)
-    {
+    public Faculty(long id, String password, String firstName, String lastName, String emailAddress, Date lastAccess, Date enrolDate, boolean enabled, char type, String schoolCode, String schoolDescription, String office, int extension) throws InvalidNameException, InvalidException, InvalidPasswordException {
         super(id, password, firstName, lastName, emailAddress, lastAccess, enrolDate, enabled, type);
         setSchoolCode(schoolCode);
         setSchoolDescription(schoolDescription);
