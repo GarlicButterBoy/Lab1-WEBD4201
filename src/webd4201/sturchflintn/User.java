@@ -63,7 +63,7 @@ public class User implements CollegeInterface {
 
     //VARIABLES
     /**
-     *Private data member to hold id
+     * Private data member to hold id
      */
     private long id;
     /**
@@ -103,7 +103,7 @@ public class User implements CollegeInterface {
     //Getters
     /**
      * Method to retrieve the ID
-     * @return id in the long format1
+     * @return id in the long format
      */
     public long getId()
     {
@@ -312,15 +312,15 @@ public class User implements CollegeInterface {
     //Constructors
     /**
      * Parameterized Constructor
-     * @param id Users ID
-     * @param password Users Password
-     * @param firstName User's First Name
-     * @param lastName User's Last Name
-     * @param emailAddress User's Email Address
-     * @param lastAccess User's Last Access Date
-     * @param enrolDate User's Enrolment Date
-     * @param enabled If User is Enabled
-     * @param type User's Account Type
+     * @param id            Users ID
+     * @param password      Users Password
+     * @param firstName     User's First Name
+     * @param lastName      User's Last Name
+     * @param emailAddress  User's Email Address
+     * @param lastAccess    User's Last Access Date
+     * @param enrolDate     User's Enrolment Date
+     * @param enabled       If User is Enabled
+     * @param type          User's Account Type
      * @exception InvalidUserDataException throws an exception if any of the set methods fail
      */
     public User(long id, String password, String firstName, String lastName, String emailAddress, Date lastAccess, Date enrolDate, boolean enabled, char type) throws InvalidUserDataException

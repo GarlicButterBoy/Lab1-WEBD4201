@@ -12,36 +12,62 @@ public class Faculty extends User
 {
 
     //CONSTANTS
+    /**
+     * The Default School Code for a default constructor
+     */
     public static final String DEFAULT_SCHOOL_CODE = "SET";
+    /**
+     * The Default School Description for a default constructor
+     */
     public static final String DEFAULT_SCHOOL_DESCRIPTION = "School of Engineering & Technology";
-    public static final String DEFULAT_OFFICE = "H-140";
+    /**
+     * The Default Office for a default constructor
+     */
+    public static final String DEFAULT_OFFICE = "H-140";
+    /**
+     * The Default Phone Extension for a default constructor
+     */
     public static final int DEFAULT_PHONE_EXTENSION = 1234;
 
     //VARIABLES
+    /**
+     * Private data member to hold a school code
+     */
     private String schoolCode;
+    /**
+     * Private data member to hold the school description
+     */
     private String schoolDescription;
+    /**
+     * Private data member to hold the office
+     */
     private String office;
+    /**
+     * Private data member to hold phone extension
+     */
     private int extension;
 
     //CONSTRUCTORS
-
     /**
-     *
-     * @param id
-     * @param password
-     * @param firstName
-     * @param lastName
-     * @param emailAddress
-     * @param lastAccess
-     * @param enrolDate
-     * @param enabled
-     * @param type
-     * @param schoolCode
-     * @param schoolDescription
-     * @param office
-     * @param extension
+     * Parameterized Constructor
+     * @param id                 User's ID
+     * @param password           User's Password
+     * @param firstName          User's First Name
+     * @param lastName           User's Last Name
+     * @param emailAddress       User's Email Address
+     * @param lastAccess         User's Last Time Logged In
+     * @param enrolDate          User's Enrolment Date
+     * @param enabled            User's Enabled Status
+     * @param type               User's Account Type (Faculty)
+     * @param schoolCode         User's School Code
+     * @param schoolDescription  User's School Description
+     * @param office             User's Office
+     * @param extension          User's Phone Extension
+     * @exception InvalidUserDataException throws an exception if any of the set methods fail
      */
-    public Faculty(long id, String password, String firstName, String lastName, String emailAddress, Date lastAccess, Date enrolDate, boolean enabled, char type, String schoolCode, String schoolDescription, String office, int extension) throws InvalidNameException, InvalidIdException, InvalidPasswordException, InvalidUserDataException {
+    public Faculty(long id, String password, String firstName, String lastName, String emailAddress, Date lastAccess, Date enrolDate, boolean enabled, char type, String schoolCode, String schoolDescription, String office, int extension)
+            throws InvalidUserDataException
+    {
         super(id, password, firstName, lastName, emailAddress, lastAccess, enrolDate, enabled, type);
         setSchoolCode(schoolCode);
         setSchoolDescription(schoolDescription);
@@ -49,51 +75,47 @@ public class Faculty extends User
         setExtension(extension);
     }
 
-
     /**
-     * DEFAULT CONSTRUCTOR
+     * DEFAULT CONSTRUCTOR uses the parent class constructor then uses the faculty defaults to build a basic instance
      */
     public Faculty()
     {
         super();
         setSchoolCode(DEFAULT_SCHOOL_CODE);
         setSchoolDescription(DEFAULT_SCHOOL_DESCRIPTION);
-        setOffice(DEFULAT_OFFICE);
+        setOffice(DEFAULT_OFFICE);
         setExtension(DEFAULT_PHONE_EXTENSION);
     }
 
     //ACCESSORS
     //Getters
     /**
-     *
-     * @return
+     * Method to retrieve the Faculty members School Code
+     * @return schoolCode           in the String format
      */
     public String getSchoolCode()
     {
         return schoolCode;
     }
-
     /**
-     *
-     * @return
+     * Method to retrieve the Faculty members School Description
+     * @return schoolDescription   in the String format
      */
     public String getSchoolDescription()
     {
         return schoolDescription;
     }
-
     /**
-     *
-     * @return
+     * Method to retrieve the Faculty members Office code
+     * @return office              in the String format
      */
     public String getOffice()
     {
         return office;
     }
-
     /**
-     *
-     * @return
+     * Method to retrieve the Faculty members Phone Extension
+     * @return extension          in the int format
      */
     public int getExtension()
     {
@@ -101,48 +123,43 @@ public class Faculty extends User
     }
 
     //Setters
-
     /**
-     *
-     * @param schoolCode
+     * Method to set the faculty members School Code
+     * @param schoolCode            in the String format
      */
     public void setSchoolCode(String schoolCode)
     {
         this.schoolCode = schoolCode;
     }
-
     /**
-     *
-     * @param schoolDescription
+     * Method to set the faculty members School Description
+     * @param schoolDescription    in the String format
      */
     public void setSchoolDescription(String schoolDescription)
     {
         this.schoolDescription = schoolDescription;
     }
-
     /**
-     *
-     * @param office
+     * Method to set the faculty members Office code
+     * @param office               in the String format
      */
     public void setOffice(String office)
     {
         this.office = office;
     }
-
     /**
-     *
-     * @param extension
+     * Method to set the faculty members Phone Extension
+     * @param extension            in the int format
      */
     public void setExtension(int extension)
     {
         this.extension = extension;
     }
 
-
     //METHODS
     /**
-     *
-     * @return String
+     * An Override method that returns the user account type
+     * @return      Faculty
      */
     @Override
     public String getTypeForDisplay()
@@ -151,8 +168,8 @@ public class Faculty extends User
     }
 
     /**
-     *
-     * @return String
+     * An Override method that returns the object in a string format
+     * @return object as a string
      */
     @Override
     public String toString()

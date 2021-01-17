@@ -11,24 +11,48 @@ import java.text.DecimalFormat;
 public class Mark
 {
     //CONSTANTS
+    /**
+     * Minimum Possible GPA
+     */
     public static final float MINIMUM_GPA = 0.0f;
+    /**
+     * Maximum Possible GPA
+     */
     public static final float MAXIMUM_GPA = 5.0f;
+    /**
+     * Pattern to set the format of the printed GPAs
+     */
     String pattern = "0#.##"; //sets the format for Decimals
+    /**
+     * Updates the format
+     */
     DecimalFormat GPA = new DecimalFormat(pattern);
 
     //VARIABLES
+    /**
+     * Private data variable to store the course code
+     */
     private String courseCode;
+    /**
+     * Private data variable to store the course name
+     */
     private String courseName;
+    /**
+     * Private data variable to store the result
+     */
     private int result;
+    /**
+     * Private data variable that stores the gpa weight
+     */
     private float gpaWeighting;
 
     //CONSTRUCTORS
     /**
-     *
-     * @param courseCode Class Code
-     * @param courseName Class Name
-     * @param result Class Grade
-     * @param gpaWeighting GPA Weight
+     * Parameterized Constructor
+     * @param courseCode    Class Code
+     * @param courseName    Class Name
+     * @param result        Class Grade
+     * @param gpaWeighting  GPA Weight
      */
     public Mark(String courseCode, String courseName, int result, float gpaWeighting)
     {
@@ -51,37 +75,33 @@ public class Mark
 
     //ACCESSORS
     //Getters
-
     /**
-     *
-     * @return
+     * Method to retrieve the Course Code
+     * @return courseCode    as a String
      */
     public String getCourseCode()
     {
         return courseCode;
     }
-
     /**
-     *
-     * @return
+     * Method to retrieve the Course Name
+     * @return courseName    as a String
      */
     public String getCourseName()
     {
         return courseName;
     }
-
     /**
-     *
-     * @return
+     * Method to retrieve the result
+     * @return result        as an int
      */
     public int getResult()
     {
         return result;
     }
-
     /**
-     *
-     * @return
+     * Method to retrieve the GPA Weight
+     * @return gpaWeighting  as a floar
      */
     public float getGpaWeighting()
     {
@@ -89,37 +109,33 @@ public class Mark
     }
 
     //Setters
-
     /**
-     *
-     * @param courseCode
+     * Method to set the Course Code
+     * @param courseCode     in a String format
      */
     public void setCourseCode(String courseCode)
     {
         this.courseCode = courseCode;
     }
-
     /**
-     *
-     * @param courseName
+     * Method to set the Course Name
+     * @param courseName     in a String format
      */
     public void setCourseName(String courseName)
     {
         this.courseName = courseName;
     }
-
     /**
-     *
-     * @param result
+     * Method to set the Result
+     * @param result         in an int format
      */
     public void setResult(int result)
     {
         this.result = result;
     }
-
     /**
-     *
-     * @param gpaWeighting
+     * Method to set the GPA Weight
+     * @param gpaWeighting   in a float format
      */
     public void setGpaWeighting(float gpaWeighting)
     {
@@ -127,13 +143,13 @@ public class Mark
     }
 
     //METHODS
-
     /**
-     *
-     * @return
+     * An Override method that returns the object in a string format
+     * @return object as a string
      */
     @Override
-    public String toString() {
+    public String toString()
+    {
         return  String.format("%-20", getCourseCode()) +
                 String.format("%-50", getCourseName()) +
                 String.format("%-15", getResult()) +

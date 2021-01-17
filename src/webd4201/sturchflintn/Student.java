@@ -12,55 +12,79 @@ import java.util.Vector;
 public class Student extends User
 {
     //CONSTANTS
+    /**
+     * The Default Program Code for a default constructor
+     */
     public static final String DEFAULT_PROGRAM_CODE = "UNDC";
+    /**
+     * The Default Program Description for a default constructor
+     */
     public static final String DEFAULT_PROGRAM_DESCRIPTION = "Undeclared";
+    /**
+     * The Default Year that the student is in, for a default constructor
+     */
     public static final int DEFAULT_YEAR = 1;
 
     //VARIABLES
+    /**
+     * Private Data variable to store a Program Code
+     */
     private String programCode;
+    /**
+     * Private Data variable to store a Program Description
+     */
     private String programDescription;
+    /**
+     * Private Data variable to store the students current year
+     */
     private int year;
+    /**
+     * Private Vector to store the marks the student has in each class
+     */
     private Vector<Mark> marks;
-
 
     //CONSTRUCTORS
     /**
-     *
-     * @param id
-     * @param password
-     * @param firstName
-     * @param lastName
-     * @param emailAddress
-     * @param lastAccess
-     * @param enrolDate
-     * @param enabled
-     * @param type
-     * @param programCode
-     * @param programDescription
-     * @param year
-     * @param marks
+     * Parameterized Constructor that accepts a vector of marks
+     * @param id                  User's ID
+     * @param password            User's Password
+     * @param firstName           User's First Name
+     * @param lastName            User's Last Name
+     * @param emailAddress        User's Email Address
+     * @param lastAccess          User's Last Access Date
+     * @param enrolDate           User's Enrolment Date
+     * @param enabled             User's Enabled Status
+     * @param type                User's Account Type
+     * @param programCode         User's Program Code
+     * @param programDescription  User's Program Description
+     * @param year                User's Current Year
+     * @param marks               User's Vector of Marks
+     * @exception InvalidUserDataException throws an exception if any of the set methods fail
      */
-    public Student(long id, String password, String firstName, String lastName, String emailAddress, Date lastAccess, Date enrolDate, boolean enabled, char type, String programCode, String programDescription, int year, Vector<Mark> marks) throws InvalidNameException, InvalidIdException, InvalidPasswordException, InvalidUserDataException {
+    public Student(long id, String password, String firstName, String lastName, String emailAddress, Date lastAccess, Date enrolDate, boolean enabled, char type, String programCode, String programDescription, int year, Vector<Mark> marks)
+            throws InvalidUserDataException
+    {
         super(id, password, firstName, lastName, emailAddress, lastAccess, enrolDate, enabled, type);
         setProgramCode(programCode);
         setProgramDescription(programDescription);
         setYear(year);
         setMarks(marks);
     }
-
     /**
-     * @param id
-     * @param password
-     * @param firstName
-     * @param lastName
-     * @param emailAddress
-     * @param lastAccess
-     * @param enrolDate
-     * @param enabled
-     * @param type
-     * @param programCode
-     * @param programDescription
-     * @param year
+     *  Parameterized Constructor that doesn't need a vector of marks
+     * @param id                  User's ID
+     * @param password            User's Password
+     * @param firstName           User's First Name
+     * @param lastName            User's Last Name
+     * @param emailAddress        User's Email Address
+     * @param lastAccess          User's Last Access Date
+     * @param enrolDate           User's Enrolment Date
+     * @param enabled             User's Enabled Status
+     * @param type                User's Account Type
+     * @param programCode         User's Program Code
+     * @param programDescription  User's Program Description
+     * @param year                User's Current Year
+     * @exception InvalidUserDataException throws an exception if any of the set methods fail
      */
     public Student(long id, String password, String firstName, String lastName, String emailAddress,
                    Date lastAccess, Date enrolDate, boolean enabled, char type, String programCode,
@@ -68,9 +92,8 @@ public class Student extends User
         this(id, password, firstName, lastName, emailAddress, lastAccess, enrolDate,
                 enabled, type, programCode, programDescription, year, new Vector<>());
     }
-
     /**
-     * Default Constructor
+     * Default Constructor uses the parent class constructor then uses the student defaults to build a basic instance
      */
     public Student() throws InvalidNameException, InvalidIdException, InvalidPasswordException, InvalidUserDataException {
         this(DEFAULT_ID, DEFAULT_PASSWORD, DEFAULT_FIRST_NAME, DEFAULT_LAST_NAME, DEFAULT_EMAIL_ADDRESS,
@@ -81,8 +104,8 @@ public class Student extends User
     //ACCESSORS
     //Getters
     /**
-     *
-     * @return
+     * Method that returns the Program Code
+     * @return programCode         In the String format
      */
     public String getProgramCode()
     {
@@ -90,8 +113,8 @@ public class Student extends User
     }
 
     /**
-     *
-     * @return
+     * Method that returns the Program Description
+     * @return programDescription  In the String format
      */
     public String getProgramDescription()
     {
@@ -99,8 +122,8 @@ public class Student extends User
     }
 
     /**
-     *
-     * @return
+     * Method that returns the Students current year
+     * @return year               In the int format
      */
     public int getYear()
     {
@@ -108,8 +131,8 @@ public class Student extends User
     }
 
     /**
-     *
-     * @return
+     * Method that returns a vector of marks
+     * @return marks             As a vector
      */
     public Vector<Mark> getMarks()
     {
@@ -118,8 +141,8 @@ public class Student extends User
 
     //Setters
     /**
-     *
-     * @param programCode
+     * Method that sets the Program Code
+     * @param programCode        In the String Format
      */
     public void setProgramCode(String programCode)
     {
@@ -127,8 +150,8 @@ public class Student extends User
     }
 
     /**
-     *
-     * @param programDescription Sets the Students program description
+     * Method that sets the Program Description
+     * @param programDescription In the String format
      */
     public void setProgramDescription(String programDescription)
     {
@@ -136,8 +159,8 @@ public class Student extends User
     }
 
     /**
-     *
-     * @param year Sets the Students start year
+     * Method that sets the  Students current year
+     * @param year              In the int format
      */
     public void setYear(int year)
     {
@@ -145,8 +168,8 @@ public class Student extends User
     }
 
     /**
-     *
-     * @param marks Sets the Students Mark
+     * Method that sets a vector of marks
+     * @param marks            In a vector
      */
     public void setMarks(Vector<Mark> marks)
     {
@@ -155,8 +178,8 @@ public class Student extends User
 
     //METHODS
     /**
-     *
-     * @return String
+     * An Override method that returns the user account type
+     * @return   Student
      */
     @Override
     public String getTypeForDisplay()
@@ -165,8 +188,8 @@ public class Student extends User
     }
 
     /**
-     *
-     * @return String
+     * An Override method that returns the object in a string format
+     * @return object as a string
      */
     @Override
     public String toString()
