@@ -14,154 +14,170 @@ import static java.lang.Double.*;
  */
 public class User implements CollegeInterface {
 
-    //Constants
+    //CONSTANTS
+    /**
+     *The Default ID for a default constructor
+     */
     protected static long DEFAULT_ID = 100123456;
+    /**
+     * The Default Password for a default constructor
+     */
     protected static String DEFAULT_PASSWORD = "password";
+    /**
+     *The minimum password length allowed
+     */
     public static final byte MINIMUM_PASSWORD_LENGTH = 8;
+    /**
+     * The maximum password length allowed
+     */
     public static final byte MAXIMUM_PASSWORD_LENGTH = 20;
+    /**
+     * Default first name for a default constructor
+     */
     protected static String DEFAULT_FIRST_NAME = "John";
+    /**
+     *Default last name for a default constructor
+     */
     protected static String DEFAULT_LAST_NAME = "Doe";
+    /**
+     *Default email for a default constructor
+     */
     protected static String DEFAULT_EMAIL_ADDRESS = "john.doe@dcmail.com";
+    /**
+     *Default enabled status for a default constructor
+     */
     protected static boolean DEFAULT_ENABLED_STATUS = true;
+    /**
+     *Default user type for a default constructor
+     */
     protected static char DEFAULT_TYPE = 's';
+    /**
+     *ID must be 9 bytes, or characters, long
+     */
     protected static byte ID_NUMBER_LENGTH = 9;
+    /**
+     *Updates date format to Canadian
+     */
     protected final static DateFormat DF = DateFormat.getDateInstance(DateFormat.MEDIUM, Locale.CANADA);
 
+    //VARIABLES
     /**
-     *
+     *Private data member to hold id
      */
     private long id;
-
     /**
-     *
+     *Private data member to hold password
      */
     private String password;
-
     /**
-     *
+     *Private data member to hold first name
      */
     private String firstName;
-
     /**
-     *
+     *Private data member to hold last name
      */
     private String lastName;
-
     /**
-     *
+     *Private data member to hold email address
      */
     private String emailAddress;
-
     /**
-     *
+     *Private data member to hold the last access
      */
     private Date lastAccess;
-
     /**
-     *
+     *Private data member to holds the enrol date
      */
     private Date enrolDate;
-
     /**
-     *
+     *Private data member to hold the enabled status
      */
     private boolean enabled;
-
     /**
-     *
+     *Private data member to hold user type
      */
     private char type;
 
     //Accessors
     //Getters
     /**
-     *
-     * @return
+     * Method to retrieve the ID
+     * @return id in the long format1
      */
     public long getId()
     {
         return id;
     }
-
     /**
-     *
-     * @return
+     * Method to retrieve the password
+     * @return password         in the String format
      */
     public String getPassword()
     {
         return password;
     }
-
     /**
-     *
-     * @return
+     * Method to retrieve the first name
+     * @return firstName        in the String format
      */
     public String getFirstName()
     {
         return firstName;
     }
-
     /**
-     *
-     * @return
+     * Method to retrieve the last name
+     * @return lastName         in the String format
      */
     public String getLastName()
     {
         return lastName;
     }
-
     /**
-     *
-     * @return
+     * Method to retrieve the email address
+     * @return emailAddress     in the String format
      */
     public String getEmailAddress()
     {
         return emailAddress;
     }
-
     /**
-     *
-     * @return
+     * Method to retrieve the last access date
+     * @return lastAccess       in the Date format (Canadian)
      */
     public Date getLastAccess()
     {
         return lastAccess;
     }
-
     /**
-     *
-     * @return
+     * Method to retrieve the enrolment date
+     * @return enrolDate        in the Date format (Canadian)
      */
     public Date getEnrolDate()
     {
         return enrolDate;
     }
-
     /**
-     *
-     * @return
+     * Method to retrieve the enabled status
+     * @return enabled          in the boolean format
      */
     public boolean isEnabled()
     {
         return enabled;
     }
-
     /**
-     *
-     * @return
+     * Method to retrieve the user type
+     * @return type             as a char
      */
     public char getType()
     {
         return type;
     }
 
-
-
     //Setters
     /**
-     *
-     * @param id
-     * @exception InvalidIdException
+     * Method to set the id
+     * @param id            must be between a minimum and maximum
+     * @exception InvalidIdException  is thrown if anything fails setting the ID
      */
     public void setId(long id) throws InvalidIdException
     {
@@ -175,10 +191,10 @@ public class User implements CollegeInterface {
         }
 
     }
-
     /**
-     *
-     * @param password
+     * Method to set the password
+     * @param password      must be between a minimum and maximum length
+     * @exception InvalidPasswordException      is thrown if anything fails setting the password
      */
     public void setPassword(String password) throws InvalidPasswordException
     {
@@ -194,8 +210,9 @@ public class User implements CollegeInterface {
     }
 
     /**
-     *
-     * @param firstName
+     * Method to set the first name
+     * @param firstName     must be longer than 0 characters and not be all numbers
+     * @exception InvalidNameException      is thrown if anything fails setting the first name
      */
     public void setFirstName(String firstName) throws InvalidNameException
     {
@@ -220,8 +237,9 @@ public class User implements CollegeInterface {
     }
 
     /**
-     *
-     * @param lastName
+     * Method to set the last name
+     * @param lastName     must be longer than 0 characters and not be all numbers
+     * @exception InvalidNameException      is thrown if anything fails setting the last name
      */
     public void setLastName(String lastName) throws InvalidNameException
     {
@@ -246,8 +264,8 @@ public class User implements CollegeInterface {
     }
 
     /**
-     *
-     * @param emailAddress
+     * Method to set the email address
+     * @param emailAddress  a string for the email address
      */
     public void setEmailAddress(String emailAddress)
     {
@@ -255,8 +273,8 @@ public class User implements CollegeInterface {
     }
 
     /**
-     *
-     * @param lastAccess
+     * Method to set the last access date
+     * @param lastAccess  a date for the last access date
      */
     public void setLastAccess(Date lastAccess)
     {
@@ -264,8 +282,8 @@ public class User implements CollegeInterface {
     }
 
     /**
-     *
-     * @param enrolDate
+     * Method to set the enrolment date
+     * @param enrolDate  a date for the enrolment day
      */
     public void setEnrolDate(Date enrolDate)
     {
@@ -273,8 +291,8 @@ public class User implements CollegeInterface {
     }
 
     /**
-     *
-     * @param enabled
+     * Method to set the enabled status
+     * @param enabled  a boolean (true/false) for the enabled status of the user
      */
     public void setEnabled(boolean enabled)
     {
@@ -282,8 +300,8 @@ public class User implements CollegeInterface {
     }
 
     /**
-     *
-     * @param type
+     * Method to set the user type
+     * @param type  a char that defines the type of user
      */
     public void setType(char type)
     {
@@ -293,7 +311,7 @@ public class User implements CollegeInterface {
     //Constructors
     /**
      * Parameterized Constructor
-     * @param id User ID
+     * @param id Users ID
      * @param password Users Password
      * @param firstName User's First Name
      * @param lastName User's Last Name
@@ -302,6 +320,7 @@ public class User implements CollegeInterface {
      * @param enrolDate User's Enrolment Date
      * @param enabled If User is Enabled
      * @param type User's Account Type
+     * @exception InvalidUserDataException throws an exception if any of the set methods fail
      */
     public User(long id, String password, String firstName, String lastName, String emailAddress, Date lastAccess, Date enrolDate, boolean enabled, char type) throws InvalidUserDataException
     {
@@ -325,7 +344,7 @@ public class User implements CollegeInterface {
     }
 
     /**
-     * Default Constructor
+     * Default Constructor uses all of the default constants and the current date it is called
      */
     public User()
     {
@@ -343,7 +362,7 @@ public class User implements CollegeInterface {
     //Methods
     /**
      * Returns the user type depending on the child class it is called.
-     * @return String User
+     * @return String of 'User'
      */
     public String getTypeForDisplay()
     {
@@ -352,23 +371,23 @@ public class User implements CollegeInterface {
 
     /**
      * Overrides the toString method to print out the class to a string.
-     * @return String
+     * @return a string that prints the relevant objects information using getters
      */
     @Override
     public String toString()
     {
         return  getTypeForDisplay() + "\n{" +
-                "Student ID    = " + id + "\n" +
-                "Name          = " + firstName + ' ' + lastName + "\n" +
-                "Email Address = " + emailAddress + '\n' +
-                "Created On    = " + enrolDate + "\n" +
-                "Last Access   = " + lastAccess + "\n" +
+                "Student ID    = " + getId() + "\n" +
+                "Name          = " + getFirstName() + ' ' + getLastName() + "\n" +
+                "Email Address = " + getEmailAddress() + '\n' +
+                "Created On    = " + getEnrolDate() + "\n" +
+                "Last Access   = " + getLastAccess() + "\n" +
                 '}';
     }
 
     /**
      * Prints the object.
-     * @return Object as a String
+     * @return the object as a String
      */
     public void dump()
     {
@@ -377,7 +396,7 @@ public class User implements CollegeInterface {
 
     /**
      * Returns a boolean depending on the id number after being compared to the min and max id numbers allowed.
-     * @param id
+     * @param id a long variable that represents the id
      * @return boolean
      */
     public static boolean verifyId(long id)
