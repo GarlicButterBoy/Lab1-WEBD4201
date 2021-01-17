@@ -3,10 +3,10 @@ package webd4201.sturchflintn;
 import java.security.PrivilegedActionException;
 
 /**
- * InvalidException Class that extends the Exception class
+ * InvalidPasswordException throws an exception when there is an error with the password on instantiation
  * @author Nick Sturch-Flint - 100303769
- * @author Nick Sturch-Flint
  * @version 1.0 (Janaury 16th, 2021)
+ * @since January 8th, 2021
  */
 
 public class InvalidPasswordException extends Exception

@@ -3,10 +3,10 @@ package webd4201.sturchflintn;
 import java.text.DecimalFormat;
 
 /**
- * Class Description:
+ * Mark class that doesn't extend anything will act as a storage for grades from Faculty, for Students
  * @author Nick Sturch-Flint - 100303769
  * @version 1.0 (January 11th, 2021)
- * @since 1.0 (January 11th, 2021)
+ * @since 1.0 (January 8th, 2021)
  */
 public class Mark
 {

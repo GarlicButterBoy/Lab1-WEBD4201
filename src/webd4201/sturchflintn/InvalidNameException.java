@@ -2,7 +2,12 @@ package webd4201.sturchflintn;
 
 import java.security.PrivilegedActionException;
 
-
+/**
+ * InvalidNameException throws an exception when there is an error with the name on instantiation
+ * @author Nick Sturch-Flint - 100303769
+ * @version 1.0 (Janaury 16th, 2021)
+ * @since January 8th, 2021
+ */
 public class InvalidNameException extends Exception
 {
     @SuppressWarnings("serial")

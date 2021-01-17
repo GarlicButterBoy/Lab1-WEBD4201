@@ -1,8 +1,10 @@
 package webd4201.sturchflintn;
 
 /**
+ * College Interface will act as a 'super parent' to all extended classes in this program
  * @author Nick Sturch-Flint - 100303769
  * @version 1.0 (Janaury 8th, 2021)
+ * @since January 8th, 2021
  */
 public interface CollegeInterface {
 

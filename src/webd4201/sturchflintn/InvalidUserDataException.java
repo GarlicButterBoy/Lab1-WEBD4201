@@ -2,7 +2,12 @@ package webd4201.sturchflintn;
 
 import java.security.PrivilegedActionException;
 
-
+/**
+ * Exception used to throw an exception if any of the invalid name/id/password or other errors occur during the creation of the object
+ * @author Nick Sturch-Flint - 100303769
+ * @version 1.0 (Janaury 16th, 2021)
+ * @since January 8th, 2021
+ */
 public class InvalidUserDataException extends Exception
 {
     @SuppressWarnings("serial")

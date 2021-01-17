@@ -3,6 +3,12 @@ package webd4201.sturchflintn;
 import java.util.Date;
 import java.util.Vector;
 
+/**
+ * Student class extends the user class and acts as the Student user type
+ * @author Nick Sturch-Flint - 100303769
+ * @version 1.0 (Janaury 8th, 2021)
+ * @since January 8th, 2021
+ */
 public class Student extends User
 {
     //CONSTANTS

@@ -3,9 +3,10 @@ package webd4201.sturchflintn;
 import java.util.Date;
 
 /**
+ * Faculty class extends the user class and acts as the Faculty user type
  * @author Nick Sturch-Flint - 100303769
- * @author Nick Sturch-Flint
  * @version 1.0 (Janaury 8th, 2021)
+ * @since January 8th, 2021
  */
 public class Faculty extends User
 {

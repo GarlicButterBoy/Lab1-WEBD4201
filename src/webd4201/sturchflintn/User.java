@@ -8,9 +8,10 @@ import java.util.Locale;
 import static java.lang.Double.*;
 
 /**
+ * User class extends the college interface but also acts as the parent class to Faculty and Student user types
  * @author Nick Sturch-Flint - 100303769
- * @author Nick Sturch-Flint
  * @version 1.0 (Janaury 8th, 2021)
+ * @since January 8th, 2021
  */
 public class User implements CollegeInterface {
 
