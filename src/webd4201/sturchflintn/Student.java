@@ -194,7 +194,7 @@ public class Student extends User
     @Override
     public String toString()
     {
-        return  getTypeForDisplay() + "\n{" +
+        return  getTypeForDisplay() + "\n{\n" +
                 getFirstName() + " " + getLastName() + "(" + getId() + ")" + "\n" +
                 "Currently in " + getYear() + " year of " + getProgramDescription() + " " + getProgramCode() + "\n" +
                 "Enrolled: " + getEnrolDate() +
